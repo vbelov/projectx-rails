@@ -1,0 +1,4 @@
+test:
+  database: projectx-rails_test
+  adapter: postgresql
+  username: postgres
