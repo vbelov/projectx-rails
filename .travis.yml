@@ -1,8 +1,15 @@
 language: ruby
 rvm:
-  - 2.2.1
+- 2.2.1
 addons:
-  postgresql: "9.4"
+  postgresql: '9.4'
 before_script:
-  - psql -c 'create database projectx_rails_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+- psql -c 'create database projectx_rails_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: g9Jp/jJJhyLkCTYMRH6gEXSCWGFgbzTidk/fvJuz9zZz+c7RJvGF1mcjZJ5BkUA919nukwFIsVFhnKsstFcpkNJII34avhiBcxel/fbviipj56x58hV/Axn31ujagATTd7UEVc1HWQClDNG+C1ZTY6eL0O491QC3bKZGtST51NH1U5UtLAUEejbn9nb9H3CiQ7Z5bdqlbk+VZd7WakU/QHdDuqYSoxmLAcYPbVD8QUXovko72bz5+5UMs6LQPjWRFTVTJqF1D4gKNBs9OvmSXypunM2CvwSaBA27oWPB7AMDVVswfjnNSXV/wXLTia/IA/mf4htwPMux+EZw8YxHMMGX+YvGLba1VnWRMrYNp6I5uORa4/bnBq1rMK2d0SeGZGYQu01tfAzOnGQgslqD2SKraQvCAQpFTJlXtsTQ9bpliQzPKrPvTaVRi3HbW2hhXTzFz7dC8W+PMbkj0zBZfY1XE5wCOQDbP4xYgd9g71+YiFVI4t37YRNNiKWKdQrVx9dzdaHvTMa8VCxuaLrwE0S4rKlQ8o9gqc+pNFgSbsgCKaauNOLr7OYtExZKeSV/KCvGsxPeU9ttGX4eiZGBE8Zt8KzpsdFgyB0lqOQ8YnYmG9dngysj0mduIOK0/Aq78z4revfU+cPbwEWE5w4G2J4w5xTbXKLafgaryRge/BA=
+  app: floating-journey-6000
+  on:
+    repo: vbelov/projectx-rails
