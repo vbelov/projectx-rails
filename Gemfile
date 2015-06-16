@@ -12,6 +12,7 @@ gem 'pg'
 # gem 'capistrano-rails', group: :development
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # bundle exec rake doc:rails generates the API under doc/api.
